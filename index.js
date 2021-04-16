@@ -290,7 +290,7 @@ class life360_circle extends life360_helper {
     let params;
     if (since !== undefined) {
       if (since instanceof Date) {
-        since = Math.floor(a.getTime() / 1000);
+        since = Math.floor(since.getTime() / 1000);
       } else if (typeof since === 'string') {
         since = Math.floor((new Date(since)).getTime() / 1000);
       }
@@ -300,7 +300,7 @@ class life360_circle extends life360_helper {
     const locations = new life360_location_list(this.api);
     for (let i = 0; i < json.locations.length; i++) {
       const location = new life360_location(this.api);
-      location.populate(json[i].locations);
+      location.populate(json.locations[i]);
       locations.addChild(location);
     }
     return locations;
