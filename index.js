@@ -564,13 +564,13 @@ class life360_member extends life360_helper {
     let params;
     if (time !== undefined) {
       if (time instanceof Date) {
-        time = Math.floor(a.getTime() / 1000);
+        time = Math.floor(time.getTime() / 1000);
       } else if (typeof time === 'string') {
         time = Math.floor((new Date(time)).getTime() / 1000);
       }
       params = { time: time };
     }
-    const json = await this.request('/v3/circles/' + this.circle.id + '/members/' + this.id + '/history', { params });
+    const json = await this.request('/v3/circles/' + this.circle.circle.id + '/members/' + this.id + '/history', { params });
     const locations = new life360_location_list(this.api);
     for (let i = 0; i < json.locations.length; i++) {
       const location = new life360_location(this.api);
