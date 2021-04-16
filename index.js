@@ -250,9 +250,11 @@ class life360_circle extends life360_helper {
   async allPlaces() {
     const json = await this.request('/v3/circles/' + this.id + '/allplaces');
     // todo: return life360_place_list
-    const places = new life360_place_list(this);
-    places.populate(json.places);
-    return places;
+    // const places = new life360_place_list(this);
+    // places.populate(json.places);
+    // return places;
+    debugger;
+    return json.places || [];
   }
   async code() {
     if (global.DEBUG_FLAG === false) throw 'not implemented';
@@ -322,6 +324,7 @@ class life360_circle extends life360_helper {
     return json;
   }
   async listNearbyplaces(lat, lon, wifiscan) {
+    // unused params
     let params;
     if (wifiscan !== undefined) {
       params = { wifiscan: wifiscan };
@@ -329,13 +332,13 @@ class life360_circle extends life360_helper {
     const json = await this.request('/v3/circles/' + this.id + '/nearbyplaces/' + lat + '/' + lon);
     // todo: return life360_place_list
     debugger;
-    return json;
+    return json.places || [];
   }
   async listPlaces() {
     const json = await this.request('/v3/circles/' + this.id + '/places');
     // todo: return life360_place_list
     debugger;
-    return json;
+    return json.places || [];
   }
   async watchlist() {
     if (global.DEBUG_FLAG === false) throw 'not implemented';
