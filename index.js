@@ -5,7 +5,7 @@ let DEBUG_FLAG = false;
 
 
 /**
- * Trys to create a float from a variable of unknown type.
+ * Tries to create a float from a variable of unknown type.
  * 
  * @param {any} x Unknown variable that might contain a float.
  */
@@ -21,7 +21,7 @@ function tryCreateFloat(x) {
 }
 
 /**
- * Trys to create an integer from a variable of unknown type.
+ * Tries to create an integer from a variable of unknown type.
  * 
  * @param {any} x Unknown variable that might contain an integer.
  */
@@ -35,7 +35,7 @@ function tryCreateInt(x) {
 }
 
 /**
- * Trys to create a boolean from a variable of unknown type.
+ * Tries to create a boolean from a variable of unknown type.
  *
  * @param {any} x Unknown variable that might contain a boolean.
  */
@@ -50,7 +50,7 @@ function tryCreateBool(x) {
 }
 
 /**
- * Trys to create a JS Date from a variable of unknown type.
+ * Tries to create a JS Date from a variable of unknown type.
  *
  * @param {any} x Unknown variable that might contain a date.
  */
